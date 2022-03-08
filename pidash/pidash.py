@@ -6,10 +6,10 @@ from gpiozero import *
 class PiDash:
     def pulsegenread(self):
         sen0105 = gpiozero.DigitalInputDevice(26,pull_up=True)
+        speedReading = 0
         while True:
             if sen0105.value == 1:
-                speedReading = 0
-                speedReading ++ 1
-                if speedReading >= 16000:
-                    print(speedReading)
+
+                speedReading += 1
+                print(speedReading)
 
