@@ -4,6 +4,8 @@ import gpiozero
 from gpiozero import *
 
 class PiDash:
+    def __init__(self):
+        gpiozero.devices.DefaultPin = RPIOPin
     def pulsegenread(self):
         sen0105 = gpiozero.DigitalInputDevice(26,pull_up=True)
         speedReading = 0
