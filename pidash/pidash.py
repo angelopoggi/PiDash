@@ -11,5 +11,6 @@ class PiDash:
             if sen0105.value == 1:
 
                 speedReading += 1
-                print(speedReading)
+                print(speedReading / 16000)
+
 
