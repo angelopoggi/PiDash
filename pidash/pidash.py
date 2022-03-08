@@ -8,6 +8,5 @@ class PiDash:
         sen0105 = gpiozero.DigitalInputDevice(26,pull_up=True)
         while True:
             speedReading = sen0105.value ++ sen0105.value
-            if speedReading >= 16000:
-                print(speedReading / 16000)
+            print(speedReading)
 
