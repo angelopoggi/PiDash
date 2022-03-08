@@ -9,9 +9,11 @@ class PiDash:
         speedReading = 0
         while True:
             if sen0105.value == 1:
-
                 speedReading += 1
                 if speedReading >= 16000:
                     print(speedReading // 16000)
+            elif sen0105.value == 0:
+                #reset speed reading back to zero if no movement
+                speedReading = 0
 
 
