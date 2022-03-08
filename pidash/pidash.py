@@ -5,6 +5,6 @@ from gpiozero import *
 
 class PiDash:
     def pulsegenread(self):
-        sen0105 = gpiozero.DigitalInputDevice(26,pull_up=False)
+        sen0105 = gpiozero.DigitalInputDevice(26,pull_up=True)
         while True:
-            print(sen0105)
+            print(sen0105.value)
