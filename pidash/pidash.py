@@ -2,6 +2,7 @@
 #2022 - Angelo Poggi angelo.poggi@enigmaconsulting.tech
 import gpiozero
 from gpiozero import *
+from gpiozero.pins.native import RPIOPin
 
 class PiDash:
     def __init__(self):
