@@ -1,22 +1,30 @@
 #PiDash Project
 #2022 - Angelo Poggi angelo.poggi@enigmaconsulting.tech
-import gpiozero
-from gpiozero import *
-from gpiozero.pins.native import RPIOPin
+
+from machine import Pin
 
 class PiDash:
     def __init__(self):
-        gpiozero.devices.DefaultPin = RPIOPin
+        #want to init the pin at 0 value
+        self.sen0105 = Pin(26, Pin.IN, Pin.PULL_DOWN)
+        #self.sen0105.value = self.sen0105.read_digital()
     def pulsegenread(self):
-        sen0105 = gpiozero.DigitalInputDevice(26,pull_up=True)
-        speedReading = 0
+        #starting off at Zero
+        speed_increment = 0
+        vehicle_speed = 0
         while True:
-            if sen0105.value == 1:
-                speedReading += 1
-                if speedReading >= 16000:
-                    print(speedReading // 16000)
-            elif sen0105.value == 0:
-                #reset speed reading back to zero if no movement
-                speedReading = 0
+            if self.sen0105.value() == 1:
+                speed_increment += 1
+                if speed_increment == 16000:
+                    vehicle_speed += 1
+                    # reset speed and start over
+                    speed_increment == 0
+            elif self.sen0105.value() == 0:
+                # if we get no pulse start subtracting
+                speed_increment -= 1
+                if speed_increment == 0:
+                    vehicle_speed -= 1
+            print(vehicle_speed)
+
 
 
