@@ -5,6 +5,11 @@ PiDash aims to provide a digital dashboard for older vehicles.
 Development is based on a 1972 Mercedes 220D. Collaboration for different
 sensors and vehicles is appreciated
 
+# Hardware used for testing
+
+Board: Raspberry Pi Pico
+Speedometer Sending Unit: Dakota-Digital SEN-01-05 16K PPM
+
 # Change logs
 
 ## 2022 05 04
