@@ -15,7 +15,7 @@ class ReadPicoSerial():
                      parity=PARITY_NONE,
                      stopbits=STOPBITS_ONE,
                      bytesize=EIGHTBITS,
-                     timeout=1
+                     timeout=10
                      )
         while True:
             try:
