@@ -10,17 +10,16 @@ class ReadPicoSerial():
         self.UART_BAUD = 9600
 
     def readpico(self):
-        with open(self.UART_COM, 'rb') as ser
-            ser = Serial(self.UART_COM,
-                         self.UART_BAUD,
-                         parity=PARITY_NONE,
-                         stopbits=STOPBITS_ONE,
-                         bytesize=EIGHTBITS,
-                         timeout=1
-                         )
-            while True:
-                try:
-                    data = ser.read(2048)
-                    print(repr(data))
-                except KeyboardInterrupt:
-                    raise("KEYBOARD INTERUPT - OHMY!")
+        ser = Serial(self.UART_COM,
+                     self.UART_BAUD,
+                     parity=PARITY_NONE,
+                     stopbits=STOPBITS_ONE,
+                     bytesize=EIGHTBITS,
+                     timeout=1
+                     )
+        while True:
+            try:
+                data = ser.read(2048)
+                print(repr(data))
+            except KeyboardInterrupt:
+                raise("KEYBOARD INTERUPT - OHMY!")
