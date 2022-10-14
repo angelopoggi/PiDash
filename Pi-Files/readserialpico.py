@@ -6,7 +6,7 @@ import time
 
 class ReadPicoSerial():
     def __init__(self):
-        self.UART_COM = 'COM14'
+        self.UART_COM = '/dev/serial1'
         self.UART_BAUD = 9600
     def readpico(self):
         ser = Serial(self.UART_COM, self.UART_BAUD)
