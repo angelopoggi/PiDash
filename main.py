@@ -42,4 +42,3 @@ while True:
     temperature = int(temperature)
     #SERIAL SHIT
     uart.write(str(vel))
-    utime.sleep(1)
