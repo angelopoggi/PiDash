@@ -18,6 +18,8 @@ uart = UART(0,
             parity=None,
             stop=1)
 
+uart.init()
+
 i2c = I2C(0,sda=sda,scl=scl,freq=400000)
 lcd = I2cLcd(i2c,I2C_ADDR,I2C_NUM_ROWS,I2C_NUM_COLS)
 
@@ -46,4 +48,5 @@ while True:
     temperature = temperature * 2 + 30
     temperature = int(temperature)
     #SERIAL SHIT
-    uart.write(bytes(temperature), 'utf-8')
+    message = str(temperature + '\n')
+    uart.write(bytes(message), 'utf-8')
