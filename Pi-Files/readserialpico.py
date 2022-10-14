@@ -22,6 +22,6 @@ class ReadPicoSerial():
             try:
                 data = (ser.read(2))
                 #received_data = str(data, 'UTF-8')
-                print(received_data)
+                print(data)
             except KeyboardInterrupt:
                 raise("KEYBOARD INTERUPT - OHMY!")
