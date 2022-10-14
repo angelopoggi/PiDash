@@ -6,7 +6,7 @@ import time
 
 class ReadSerial():
     def __init__(self):
-        self.UART_COM = 'COM14'
+        self.UART_COM = 'COM15'
         self.UART_BAUD = 9600
     def readserial(self):
         ser = serial.Serial(self.UART_COM, self.UART_BAUD)

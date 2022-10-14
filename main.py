@@ -1,9 +1,8 @@
-import os
 import utime
 from machine import Pin,I2C,ADC,UART
 from pico_i2c_lcd import I2cLcd
 
-spdo = Pin(0, Pin.IN)
+spdo = Pin(8, Pin.IN)
 sda = Pin(4)
 scl = Pin(5)
 I2C_ADDR = 39
