@@ -1,7 +1,7 @@
 #angelo.poggi@enigmaconsulting.tech
 
-from readserialpico import ReadSerial
+from readserialpico import ReadPicoSerial
 
 if __name__ == "__main__":
-    test = ReadSerial()
-    test.readserial()
+    test = ReadPicoSerial()
+    test.readpico()

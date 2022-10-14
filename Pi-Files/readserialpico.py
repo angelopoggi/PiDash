@@ -4,11 +4,11 @@
 from serial import Serial
 import time
 
-class ReadSerial():
+class ReadPicoSerial():
     def __init__(self):
         self.UART_COM = '/dev/tty'
         self.UART_BAUD = 9600
-    def readserial(self):
+    def readpico(self):
         ser = Serial(self.UART_COM, self.UART_BAUD)
         time.sleep(1)
         while True:
