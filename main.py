@@ -46,4 +46,4 @@ while True:
     temperature = temperature * 2 + 30
     temperature = int(temperature)
     #SERIAL SHIT
-    uart.write(temperature)
+    uart.write(str(temperature))
