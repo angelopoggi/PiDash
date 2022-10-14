@@ -10,7 +10,13 @@ I2C_NUM_ROWS = 2
 I2C_NUM_COLS =16
 temp = ADC(4)
 counter = 0
-uart = UART(0, baudrate=9600)
+uart = UART(0,
+            baudrate=9600,
+            tx=Pin(0),
+            rx=Pin(1),
+            bits=8,
+            parity=None,
+            stop=1)
 
 i2c = I2C(0,sda=sda,scl=scl,freq=400000)
 lcd = I2cLcd(i2c,I2C_ADDR,I2C_NUM_ROWS,I2C_NUM_COLS)
@@ -22,7 +28,6 @@ def spdom(pin):
 spdo.irq(trigger=Pin.IRQ_RISING, handler=spdom)
 
 while True:
-    #Ever 60 seconds, perform calculation
     utime.sleep(1)
     #SPEEDSHIT
     rpst =  counter / 16
@@ -41,4 +46,4 @@ while True:
     temperature = temperature * 2 + 30
     temperature = int(temperature)
     #SERIAL SHIT
-    uart.write(str(vel))
+    uart.write(temperature)
