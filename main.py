@@ -48,5 +48,6 @@ while True:
     temperature = temperature * 2 + 30
     temperature = int(temperature)
     #SERIAL SHIT
-    message = str(temperature + '\n')
-    uart.write(bytes(message), 'utf-8')
+    # message = str(temperature + '\n')
+    # uart.write(bytes(message), 'utf-8')
+    uart.write(temperature)
