@@ -5,6 +5,7 @@ spdo = Pin(8, Pin.IN)
 temp = ADC(4)
 counter = 0
 uart = UART(0,9600)
+td = 14 * 3.1416
 
 uart.init()
 
@@ -27,11 +28,11 @@ while True:
     rpst =  counter / 16
     rps = rpst / 1
     rpm = rps * 60
-    td = 14 * 3.1416
     vel = rpm * td
     vel = vel // 2.8
     vel = vel / 16000
-    vel  = int(vel)
+    vel = int(vel)
+    print(vel)
     # #TEMPSHIT
     # #this converts voltage
     conversion_factor = 3.3 / (65535)
@@ -40,5 +41,8 @@ while True:
     temperature = temperature * 2 + 30
     temperature = int(temperature)
     #SERIAL SHIT
-    payload = genpayload(vel, temperature) + '\n'
-    uart.write(str(payload))
+    payload = {
+        'speed' : vel,
+        'temp' : temperature
+    }
+    uart.write(str(payload) + '\n')

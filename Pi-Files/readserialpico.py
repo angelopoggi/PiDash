@@ -21,7 +21,6 @@ class ReadPicoSerial():
             try:
                 data = ser.readline()
                 print(data)
-                time.sleep(1)
                 # received_data = str(data, 'UTF-8')
                 # print(received_data)
             except KeyboardInterrupt:
