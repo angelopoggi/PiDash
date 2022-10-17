@@ -3,7 +3,6 @@
 
 from serial import Serial, PARITY_NONE, STOPBITS_ONE, EIGHTBITS
 import time
-import utime
 
 class ReadPicoSerial():
     def __init__(self):
