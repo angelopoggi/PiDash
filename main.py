@@ -15,10 +15,11 @@ def spdom(pin):
 spdo.irq(trigger=Pin.IRQ_RISING, handler=spdom)
 
 def genpayload(speed, temp):
-    return {
-        'speed' : str(speed),
-        'temp' : str(temp)
+    dict =  {
+        'speed' : speed,
+        'temp' : temp
     }
+    return str(dict)
 
 while True:
     utime.sleep(1)
@@ -40,4 +41,4 @@ while True:
     temperature = int(temperature)
     #SERIAL SHIT
     payload = genpayload(vel, temperature) + '\n'
-    uart.write(payload)
+    uart.write(str(payload))
