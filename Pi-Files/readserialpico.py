@@ -6,7 +6,7 @@ import time
 
 class ReadPicoSerial():
     def __init__(self):
-        self.UART_COM = '/dev/ttyAMA0'
+        self.UART_COM = 'serial0'
         self.UART_BAUD = 9600
 
     def readpico(self):
@@ -15,7 +15,7 @@ class ReadPicoSerial():
                      parity=PARITY_NONE,
                      stopbits=STOPBITS_ONE,
                      bytesize=EIGHTBITS,
-                     timeout=1
+                     timeout=0
                      )
         while True:
             try:
