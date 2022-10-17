@@ -19,7 +19,7 @@ class ReadPicoSerial():
                      )
         while True:
             try:
-                data = ser.read(100)
+                data = ser.readline()
                 print(data)
                 time.sleep(1)
                 # received_data = str(data, 'UTF-8')
