@@ -43,5 +43,5 @@ while True:
     rpm = rps * 60
     speed = calc_speed(rpm, tire_circumference)
     print(speed)
-    uart.write(str(speed).encode())
+    uart.write(speed)
     counter = 0
