@@ -20,8 +20,11 @@ class ReadPicoSerial():
                      )
         while True:
             try:
-                time.sleep(1)
                 data = ser.read(100)
+                if not data:
+                    print("0 MPH")
+                else:
+                    print(f"{int(data, 16)} MPH")
                 #convert it to a readable format
                 #converted_data = int(data, 16)
                 #print(converted_data)
