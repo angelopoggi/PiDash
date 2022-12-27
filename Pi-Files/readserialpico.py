@@ -22,7 +22,7 @@ class ReadPicoSerial():
             try:
                 data = ser.read(100)
                 #convert it to a readable format
-                converted_data = int(binascii.hexlify(data), 16)
+                converted_data = int(data, 16)
                 print(converted_data)
                 time.sleep(1)
                 # received_data = str(data, 'UTF-8')
