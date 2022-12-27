@@ -20,16 +20,11 @@ class ReadPicoSerial():
                      )
         while True:
             try:
+                time.sleep(1)
                 data = ser.read(100)
-                try:
-                    converted_data = int(data, 16)
-                except:
-                    print(0)
-                print(converted_data)
                 #convert it to a readable format
                 #converted_data = int(data, 16)
                 #print(converted_data)
-                time.sleep(1)
                 # received_data = str(data, 'UTF-8')
                 # print(received_data)
             except KeyboardInterrupt:
