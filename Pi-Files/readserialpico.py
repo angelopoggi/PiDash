@@ -3,6 +3,7 @@
 
 from serial import Serial, PARITY_NONE, STOPBITS_ONE, EIGHTBITS
 import time
+import binascii
 
 class ReadPicoSerial():
     def __init__(self):
@@ -20,7 +21,9 @@ class ReadPicoSerial():
         while True:
             try:
                 data = ser.read(100)
-                print(data)
+                #convert it to a readable format
+                converted_data = int(binascii.hexlify(data), 16)
+                print(converted_data)
                 time.sleep(1)
                 # received_data = str(data, 'UTF-8')
                 # print(received_data)
