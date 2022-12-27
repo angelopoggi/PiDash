@@ -20,7 +20,7 @@ class ReadPicoSerial():
                      )
         while True:
             try:
-                data = ser.read(100)
+                data = ser.read()
                 if not data:
                     print("0 MPH")
                 else:
