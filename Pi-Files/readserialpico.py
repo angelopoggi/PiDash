@@ -21,10 +21,12 @@ class ReadPicoSerial():
         while True:
             try:
                 data = ser.read(100)
-                if int(data, 16) == 0:
-                    continue
-                else:
-                    print(int(data, 16))
+                try:
+                    converted_data = int(data, 16)
+                    print(converted_data)
+                except:
+                    print(0)
+
                 #convert it to a readable format
                 #converted_data = int(data, 16)
                 #print(converted_data)
