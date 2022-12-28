@@ -24,8 +24,11 @@ def spdom(pin):
     counter += 1
 def calc_speed(rpm, tire_circumference):
     speed = rpm * tire_circumference / 5280 * 12
+    speed = round(speed)
+    #This encodes the integer
+    speed = speed.to_bytes(4, "big")
     #returns the speed rounded to the nearest whole number
-    return round(speed)
+    return speed
 def calc_temp():
     conversion_factor = 3.3 / (65535)
     reading = temp.read_u16() * conversion_factor
@@ -42,6 +45,5 @@ while True:
     rps = rpst // 1
     rpm = rps * 60
     speed = calc_speed(rpm, tire_circumference)
-    print(speed)
-    uart.write(str(speed).encode())
+    uart.write(speed)
     counter = 0
