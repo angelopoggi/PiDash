@@ -20,6 +20,7 @@ class ReadPicoSerial():
                      )
         while True:
             try:
+                time.sleep(1)
                 data = ser.read(4)
                 data = int.from_bytes(data,byteorder='big')
                 print(data)
