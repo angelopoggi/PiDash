@@ -23,7 +23,7 @@ class ReadPicoSerial():
         while True:
             try:
                 data = ser.read()
-                byte_data = bytes.fromhex(data)
+                byte_data = bytes.fromhex(str(data))
                 int_value = int.from_bytes(byte_data, 'big')
                 print(int_value)
                 #convert it to a readable format
