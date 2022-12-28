@@ -22,7 +22,7 @@ class ReadPicoSerial():
             try:
                 time.sleep(1)
                 data = ser.read(4)
-                data = int.from_bytes(data,byteorder='big')
+                data = int.from_bytes(data,byteorder='little')
                 print(data)
                 #convert it to a readable format
                 #converted_data = int(data, 16)
