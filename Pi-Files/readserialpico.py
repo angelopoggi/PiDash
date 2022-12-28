@@ -23,8 +23,7 @@ class ReadPicoSerial():
         while True:
             try:
                 data = ser.read(100)
-                data = data.decode('utf-8')
-                print(data)
+                print(str(data))
                 #convert it to a readable format
                 #converted_data = int(data, 16)
                 #print(converted_data)
