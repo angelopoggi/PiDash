@@ -18,10 +18,14 @@ class ReadPicoSerial():
                      bytesize=EIGHTBITS,
                      timeout=0
                      )
+        #wait one second to wait for data to
+        time.sleep(1)
         while True:
             try:
                 data = ser.read()
-                print(data.decode())
+                byte_data = bytes.fromhex(data)
+                int_value = int.from_bytes(byte_data, 'big')
+                print(int_value)
                 #convert it to a readable format
                 #converted_data = int(data, 16)
                 #print(converted_data)
