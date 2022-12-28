@@ -18,12 +18,11 @@ class ReadPicoSerial():
                      bytesize=EIGHTBITS,
                      timeout=0
                      )
-        #wait one second to wait for data to
-        time.sleep(1)
         while True:
             try:
-                data = ser.read(100)
-                print(str(data))
+                data = ser.readline()
+                data = data.decode('utf-8')
+                print(data)
                 #convert it to a readable format
                 #converted_data = int(data, 16)
                 #print(converted_data)
