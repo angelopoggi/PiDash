@@ -8,7 +8,7 @@ import binascii
 class ReadPicoSerial():
     def __init__(self):
         self.UART_COM = '/dev/serial0'
-        self.UART_BAUD = 9600
+        self.UART_BAUD = 115200
 
     def readpico(self):
         ser = Serial(self.UART_COM,

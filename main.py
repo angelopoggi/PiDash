@@ -4,7 +4,7 @@ from machine import Pin,ADC,UART
 spdo = Pin(8, Pin.IN)
 temp = ADC(4)
 counter = 0
-uart = UART(0)
+uart = UART(0, baudrate=115200)
 tire_diameter = 27.9
 tire_circumference = tire_diameter * 3.1416
 
